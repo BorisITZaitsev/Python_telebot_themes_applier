@@ -143,14 +143,14 @@ def handle_file(message):
                              reply_markup=telebot.types.ReplyKeyboardRemove())
         else:
             if "тем" in message.document.file_name.lower():
-                src = f'C:/Users/borya/PycharmProjects/pythonProject/pythonbot_mgimo/{chat_id}/th_list.docx'
+                src = f'{path}/{chat_id}/th_list.docx'
                 with open(src, 'wb') as new_file:
                     new_file.write(downloaded_file)
                 connector(chat_id)
                 bot.reply_to(message, "Супер. Раздача тем выполнена успешно.\n")
             else:
                 folder(str(chat_id))
-                src = f'C:/Users/borya/PycharmProjects/pythonProject/pythonbot_mgimo/{chat_id}/st_list.docx'
+                src = f'{path}/{chat_id}/st_list.docx'
                 with open(src, 'wb') as new_file:
                     new_file.write(downloaded_file)
                 bot.reply_to(message, "Спасибо. Создаю базу данных на вашу группу.")
